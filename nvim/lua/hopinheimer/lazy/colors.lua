@@ -1,13 +1,46 @@
 function ColorMyPencils(color)
-	color = color or "tokyonight"
+	color = color or "catppuccin"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "DiagnosticError", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 return {
-
+    {
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		opts = {
+			no_italic = true,
+			term_colors = true,
+			transparent_background = false,
+			styles = {
+				comments = {},
+				conditionals = {},
+				loops = {},
+				functions = {},
+				keywords = {},
+				strings = {},
+				variables = {},
+				numbers = {},
+				booleans = {},
+				properties = {},
+				types = {},
+			},
+		},
+	},
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {},
+    },
+    {
+        "rebelot/kanagawa.nvim"
+    },
     {
         'doums/darcula'
     },
